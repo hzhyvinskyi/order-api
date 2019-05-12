@@ -22,5 +22,5 @@ describe('baseRoute', () => {
             .then(res => {
                 expect(res.body.title).to.be.equal('Order API');
             });
-    });
+    })
 });
