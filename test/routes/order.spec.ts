@@ -15,7 +15,7 @@ const order: Order = {
     quantity: 1,
     shipDate: new Date(),
     status: OrderStatus.Placed,
-    complete: true
+    complete: false
 };
 
 describe('orderRoute', () => {
@@ -34,7 +34,6 @@ describe('orderRoute', () => {
             .send(order)
             .then(res => {
                 expect(res.status).to.be.equal(201);
-                expect(res.body.id).to.be.equal(order.id);
                 expect(res.body.userId).to.be.equal(order.userId);
                 expect(res.body.complete).to.be.equal(order.complete);
             });
